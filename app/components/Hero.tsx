@@ -213,9 +213,9 @@ export default function Hero() {
           }}
           className="relative lg:w-1/2 flex justify-center items-center order-1 lg:order-2"
         >
-          <div className="relative w-84 h-106 sm:w-64 sm:h-64 md:w-100 md:h-100 lg:w-100 lg:h-[500px] rounded-md overflow-hidden cursor-pointer border-none">
+          <div className=" relative w-84 h-106 sm:w-64 sm:h-64 md:w-100 md:h-100 lg:w-100 lg:h-[600px] rounded-md overflow-hidden cursor-pointer">
             <Image
-              src="/Images/yusuffffff.png"
+              src="/Images/raza.png"
               alt="Zikrullah's Profile Picture"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-2xl"
