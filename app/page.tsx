@@ -23,10 +23,10 @@ export default function Home() {
         <meta name="author" content="Your Name" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Md Zikrullah | Frontend Developer" />
+        <meta property="og:title" content="Md Yusuf Raza | Network Engineer" />
         <meta
           property="og:description"
-          content="Portfolio of Md Zikrullah, a frontend developer specializing in Next.js, React, and Tailwind CSS."
+          content="Portfolio of Md Yusuf Raza, a Network Engineer "
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourwebsite.com" />
