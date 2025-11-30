@@ -73,7 +73,7 @@ const itemVariants = {
     scale: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 100,
       damping: 12
     }
@@ -134,7 +134,7 @@ function NetworkSkills() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, type: "spring" }}
+          transition={{ duration: 0.8, type: "spring" as const }}
           className="text-center mb-20"
         >
           <motion.h2
@@ -175,7 +175,7 @@ function NetworkSkills() {
               whileHover={{
                 y: -12,
                 scale: 1.05,
-                transition: { duration: 0.3, type: "spring", stiffness: 300 }
+                transition: { duration: 0.3, type: "spring" as const, stiffness: 300 }
               }}
               className="group relative"
             >
