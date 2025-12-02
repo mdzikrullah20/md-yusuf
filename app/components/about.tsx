@@ -54,7 +54,7 @@ export default function AboutPage() {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Continuous Learning",
       description:
-        "",
+        "Styaying updated with the latest networking technologies tools and industry standards to deliver the best solutions.",
     },
   ];
 
