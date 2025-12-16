@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: "https://github.com/mdzikrullah20", label: "GitHub" },
+    { icon: <Github className="w-5 h-5" />, href: "https://github.com/mdyusufraza7491-droid", label: "GitHub" },
     { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/md-yusuf-raza-874845296?utm_source=share_via&utm_content=profile&utm_medium=member_android", label: "LinkedIn" },
     { icon: <Twitter className="w-5 h-5" />, href: "https://x.com/yusuf_raza7491?t=aHQtJAs9NPf9mRkZEIhX7g&s=09", label: "Twitter" },
     { icon: <Mail className="w-5 h-5" />, href: "mailto:mdyusufraza00786@gmail.com", label: "Email" },
