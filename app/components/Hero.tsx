@@ -12,9 +12,7 @@ export default function Hero() {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
-    const roles = [
-      "Network Engineer"
-    ];
+    const roles = ["Network Engineer"];
 
     const handleType = () => {
       const currentRole = roles[loopNum % roles.length];
@@ -42,6 +40,7 @@ export default function Hero() {
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
+
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
@@ -76,22 +75,22 @@ export default function Hero() {
       className="relative min-h-screen pt-20 pb-12 flex flex-col justify-center items-center overflow-hidden bg-black"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hiddens">
-        <motion.div
+      <div className="absolute inset-0 overflow-hidden">
+        {/* <motion.div
           animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl"
-        />
-        <motion.div
+        /> */}
+        {/* <motion.div
           animate={{ scale: [1.2, 1, 1.2], rotate: [360, 180, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"
-        />
-        <motion.div
+        /> */}
+        {/* <motion.div
           animate={{ y: [0, -30, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl "
-        />
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"
+        /> */}
       </div>
 
       {/* Content */}
@@ -122,7 +121,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className=" flex justify-start mb-3 lg:mb-4  gap-2"
+            className="flex justify-start mb-3 lg:mb-4 gap-2"
           >
             <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
               And I&lsquo;m a
@@ -152,7 +151,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToProjects}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-purple-500 to-blue-500 text-white rounded-full font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all text-sm sm:text-base cursor-pointer"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-yellow-500 hover:bg-yellow-400 text-black rounded-full font-semibold shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 transition-all text-sm sm:text-base cursor-pointer"
             >
               View My Work
             </motion.button>
@@ -160,7 +159,7 @@ export default function Hero() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-purple-400 text-white rounded-full font-semibold hover:bg-purple-400/10 transition-all text-sm sm:text-base"
+              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500/10 rounded-full font-semibold transition-all text-sm sm:text-base"
             >
               Get In Touch
             </motion.a>
@@ -180,7 +179,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 lg:mb-4 bg-gray-800/50 backdrop-blur-sm rounded-full text-gray-400 hover:text-purple-400 hover:bg-gray-700/50 transition-all border border-gray-700"
+                className="p-3 lg:mb-4 bg-gray-800/50 backdrop-blur-sm rounded-full text-gray-400 hover:text-yellow-400 hover:bg-gray-700/50 transition-all border border-gray-700"
                 aria-label={link.label}
               >
                 {link.icon}
@@ -195,7 +194,7 @@ export default function Hero() {
           animate={{
             opacity: 1,
             x: 0,
-            y: [0, -5, 0], // Floating motion
+            y: [0, -5, 0],
           }}
           transition={{
             opacity: { duration: 0.8 },
@@ -216,7 +215,7 @@ export default function Hero() {
           <div className="border-none relative w-84 h-120 sm:w-64 sm:h-64 md:w-100 md:h-100 lg:w-100 lg:h-[600px] rounded-md overflow-hidden cursor-pointer">
             <Image
               src="/Images/raza.png"
-              alt="Zikrullah's Profile Picture"
+              alt="Md Yusuf Raza's Profile Picture"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
@@ -235,7 +234,7 @@ export default function Hero() {
           onClick={scrollToProjects}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="cursor-pointer text-yellow-400 hover:text-purple-300 transition-colors"
+          className="cursor-pointer text-yellow-400 hover:text-yellow-300 transition-colors"
           aria-label="Scroll down"
         >
           <ArrowDown className="w-8 h-8" />
@@ -243,22 +242,22 @@ export default function Hero() {
       </motion.div>
 
       {/* Decorative code */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.1 }}
         transition={{ delay: 2, duration: 2 }}
         className="absolute top-20 left-10 text-purple-300 font-mono text-sm hidden md:block"
       >
         {"<developer>"}
-      </motion.div>
-      <motion.div
+      </motion.div> */}
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.1 }}
         transition={{ delay: 2.2, duration: 2 }}
         className="absolute bottom-20 right-10 text-purple-300 font-mono text-sm hidden md:block"
       >
         {"</developer>"}
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

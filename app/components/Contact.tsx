@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Send } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,25 +12,35 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
 
-  // ✅ Clean handleChange (no ESLint error)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleChange = (event: { target: { name: any; value: any; }; }) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // ✅ Clean handleSubmit (no unused vars)
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
+
+    const phoneNumber = "917491823192";
+    const textMessage = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Message:* ${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      textMessage
+    )}`;
 
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
+
+      // Redirect to WhatsApp
+      window.open(whatsappUrl, "_blank");
+
       setFormData({ name: "", email: "", message: "" });
 
       setTimeout(() => setSubmitStatus(""), 3000);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -50,7 +60,7 @@ export default function Contact() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 bg-yellow-500/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -63,7 +73,7 @@ export default function Contact() {
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-1/4 -left-20 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -left-20 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-amber-500/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -84,7 +94,7 @@ export default function Contact() {
             Contact
           </h2>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Have a project in mind? Let&lsquo;s create something amazing together.
+            Have a project in mind? Let&apos;s create something amazing together.
           </p>
         </motion.div>
 
@@ -98,7 +108,7 @@ export default function Contact() {
             className="w-full sm:w-[90%] md:w-[80%] lg:w-[60%]"
           >
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <form
                 onSubmit={handleSubmit}
                 className="relative bg-gray-800/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-gray-700/50 space-y-6"
@@ -114,7 +124,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
                     placeholder="Md Yusuf Raza"
                   />
                 </div>
@@ -131,7 +141,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
+                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all"
                     placeholder="mdyusufraza@example.com"
                   />
                 </div>
@@ -147,8 +157,8 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    // rows="6"
-                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
+                    rows={5}
+                    className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all resize-none"
                     placeholder="Tell me about your project..."
                   ></textarea>
                 </div>
@@ -159,21 +169,21 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-purple-900 to-blue-800 text-white rounded-xl font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-black font-bold rounded-xl shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                        className="w-5 h-5 border-2 border-black border-t-transparent rounded-full"
                       />
-                      Sending...
+                      Opening WhatsApp...
                     </>
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Send Message
+                      Send Message via WhatsApp
                     </>
                   )}
                 </motion.button>
@@ -183,9 +193,9 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-center"
+                    className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl text-yellow-400 text-center"
                   >
-                    ✓ Message sent successfully! I&lsquo;ll get back to you soon.
+                    ✓ Redirecting to WhatsApp...
                   </motion.div>
                 )}
               </form>

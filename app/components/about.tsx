@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Network, Gauge, Wrench, Shield, Users, GraduationCap } from "lucide-react";
+import { Network, Gauge, Wrench, Shield, Users, GraduationCap, Briefcase } from "lucide-react";
+
 export default function AboutPage() {
   const skills = [
     "Networking Fundamentals",
@@ -54,7 +55,7 @@ export default function AboutPage() {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Continuous Learning",
       description:
-        "Styaying updated with the latest networking technologies tools and industry standards to deliver the best solutions.",
+        "Staying updated with the latest networking technologies, tools, and industry standards to deliver the best solutions.",
     },
   ];
 
@@ -64,7 +65,7 @@ export default function AboutPage() {
       className="relative min-h-screen pt-20 pb-12 bg-black overflow-hidden"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden ">
+      {/* <div className="absolute inset-0 overflow-hidden ">
         <motion.div
           animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -80,10 +81,10 @@ export default function AboutPage() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"
         />
-      </div>
+      </div> */}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16ss">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16">
         {/* Main Section - Text Left, Image Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-24">
           {/* Left Side - Text Content */}
@@ -94,6 +95,12 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
+              {/* Current Status Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-sm font-medium mb-3">
+                <Briefcase className="w-4 h-4 text-yellow-400" />
+                <span>Currently Network Engineer @ Airtel</span>
+              </div>
+
               <h1 className="text-4xl text-white md:text-5xl font-bold mt-2 mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                 About Me
               </h1>
@@ -106,11 +113,12 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-base text-gray-300 leading-relaxed"
             >
-              Hi, I’m MD Yusuf Raza — a dedicated Network Engineer passionate
+              Hi, I’m MD Yusuf Raza — a dedicated Network Engineer currently working at{" "}
+              <strong className="text-yellow-400 font-semibold">Airtel</strong>. I am passionate
               about building secure, reliable, and high-performance network
               infrastructures. With CCNA-level expertise, I specialize in
-              configuring, managing, and troubleshooting networks that keep
-              systems running smoothly and efficiently.{" "}
+              configuring, managing, and troubleshooting enterprise-grade networks that keep
+              critical systems running smoothly and efficiently.
             </motion.p>
 
             <motion.p
@@ -120,11 +128,11 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="text-gray-400 leading-relaxed text-base"
             >
-              I work confidently with routing, switching, VLANs, subnetting, IP
+              In my day-to-day operations at Airtel, I work confidently with routing, switching, VLANs, subnetting, IP
               addressing, network security, and Wi-Fi technologies, ensuring
-              stable connectivity across different environments. I focus on
+              stable connectivity across complex environments. I focus on
               optimizing network performance, reducing downtime, and delivering
-              seamless communication between devices and users.{" "}
+              seamless communication between devices and users.
             </motion.p>
 
             <motion.div
@@ -137,7 +145,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-semibold text-white">What I Do</h3>
               <ul className="space-y-3">
                 <li className="flex items-start text-gray-300">
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
+                  <span className="text-yellow-400 mr-3 mt-1">▹</span>
                   <span>
                     <strong className="text-white">
                       Network Configuration & Management:
@@ -148,7 +156,7 @@ export default function AboutPage() {
                   </span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
+                  <span className="text-yellow-400 mr-3 mt-1">▹</span>
                   <span>
                     <strong className="text-white">Network Security:</strong>{" "}
                     Implementing firewalls, access control, VPNs, and security
@@ -156,31 +164,31 @@ export default function AboutPage() {
                   </span>
                 </li>
                 <li className="flex items-start text-gray-300">
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
+                  <span className="text-yellow-400 mr-3 mt-1">▹</span>
                   <span>
                     <strong className="text-white">
                       Server & System Administration:
                     </strong>{" "}
                     Managing servers, monitoring system health, and ensuring
-                    reliable infrastructure support.{" "}
+                    reliable infrastructure support.
                   </span>
                 </li>
-                 <li className="flex items-start text-gray-300">
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
+                <li className="flex items-start text-gray-300">
+                  <span className="text-yellow-400 mr-3 mt-1">▹</span>
                   <span>
                     <strong className="text-white">
                       LAN/WAN Setup & Maintenance:
                     </strong>{" "}
-                    Designing and maintaining efficient local and wide area networks for seamless communication.{" "}
+                    Designing and maintaining efficient local and wide area networks for seamless communication.
                   </span>
                 </li>
-                 <li className="flex items-start text-gray-300">
-                  <span className="text-purple-400 mr-3 mt-1">▹</span>
+                <li className="flex items-start text-gray-300">
+                  <span className="text-yellow-400 mr-3 mt-1">▹</span>
                   <span>
                     <strong className="text-white">
                       Documentation & Monitoring:
                     </strong>{" "}
-                    Creating clear network documentation, maintaining logs, and using monitoring tools to track performance and security.{" "}
+                    Creating clear network documentation, maintaining logs, and using monitoring tools to track performance and security.
                   </span>
                 </li>
               </ul>
@@ -206,9 +214,9 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1, y: -5 }}
                     className="px-4 py-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 
-                             rounded-lg text-gray-300 text-sm font-medium 
-                             hover:border-purple-500 hover:text-purple-400 transition-all 
-                             cursor-default shadow-lg"
+                               rounded-lg text-gray-300 text-sm font-medium 
+                               hover:border-yellow-500 hover:text-yellow-400 transition-all 
+                               cursor-default shadow-lg"
                   >
                     {tech}
                   </motion.span>
@@ -227,9 +235,9 @@ export default function AboutPage() {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white 
-                         rounded-full font-semibold shadow-lg shadow-purple-500/50 
-                         hover:shadow-purple-500/70 transition-all"
+                className="px-6 py-3 bg-yellow-500 hover:bg-yellow-400 text-black 
+                           rounded-full font-semibold shadow-lg shadow-yellow-500/30 
+                           hover:shadow-yellow-500/50 transition-all cursor-pointer"
               >
                 Get In Touch
               </motion.a>
@@ -237,8 +245,8 @@ export default function AboutPage() {
                 href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border-2 border-purple-400 text-purple-400 rounded-full 
-                         font-semibold hover:bg-purple-400/10 transition-all text-white"
+                className="px-6 py-3 border-2 border-yellow-500 text-yellow-500 
+                           rounded-full font-semibold hover:bg-yellow-500/10 transition-all cursor-pointer"
               >
                 View Projects
               </motion.a>
@@ -251,22 +259,9 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-2 flex justify-center lg:justify-end"
+            className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative">
-              {/* Decorative elements */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-6 -right-6 w-72 h-72 bg-purple-500/10 rounded-2xl 
-                         -z-10 hidden md:block border border-purple-500/20"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute -bottom-6 -left-6 w-72 h-72 bg-blue-500/10 rounded-2xl 
-                         -z-10 hidden md:block border border-blue-500/20"
-              />
 
               {/* Image container */}
               <motion.div
@@ -293,11 +288,11 @@ export default function AboutPage() {
                 className="relative w-64 h-[400px] sm:w-72 sm:h-[450px] md:w-80 md:h-[500px] lg:w-[350px] lg:h-[550px] overflow-hidden cursor-pointer shadow-2xl"
               >
                 <Image
-              src="/Images/about.png"
-              alt="Zikrullah's Profile Picture"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-2xl"
-            />
+                  src="/Images/about.png"
+                  alt="MD Yusuf Raza's Profile Picture"
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500 rounded-2xl"
+                />
               </motion.div>
             </div>
           </motion.div>
@@ -324,18 +319,18 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl 
-                         p-6 hover:border-yellow-500/50 transition-all group cursor-pointer"
+                           p-6 hover:border-yellow-500/50 transition-all group cursor-pointer"
               >
                 <div
-                  className="w-12 h-12 bg-yellow-900 from-yellow-500/20 to-blue-500/20
-                              rounded-lg flex items-center justify-center mb-4 text-white 
-                              group-hover:scale-110 transition-transform"
+                  className="w-12 h-12 bg-yellow-900/40 border border-yellow-500/30
+                                rounded-lg flex items-center justify-center mb-4 text-yellow-400 
+                                group-hover:scale-110 transition-transform"
                 >
                   {feature.icon}
                 </div>
                 <h3
                   className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 
-                             transition-colors"
+                               transition-colors"
                 >
                   {feature.title}
                 </h3>
